@@ -1,1 +1,99 @@
-<p> Hello</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Math Club | Sources</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #f5f6fa;
+      color: #2f3640;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #273c75;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    nav {
+      background: #40739e;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0.5rem 1rem;
+      font-weight: bold;
+      transition: opacity 0.2s;
+    }
+
+    nav a:hover {
+      opacity: 0.8;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #273c75;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    ul {
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sources & References</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="#">Events</a>
+    <a href="#">Members</a>
+    <a href="#">Timeline</a>
+    <a href="sources.html">Sources</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <main>
+    <h2>Where We Get Our Info</h2>
+    <p>Here are some of the resources and materials our Math Club uses for problems, inspiration, and learning:</p>
+
+    <ul>
+      <li><a href="https://tutorial.math.lamar.edu/" target="_blank">Pauls Online Notes)</a></li>
+      <li><a href="https://www.khanacademy.org/math" target="_blank">Khan Academy – Math Section</a></li>
+      <li><a href="https://mathcounts.org" target="_blank">MATHCOUNTS</a></li>
+      <li><a href="https://nrich.maths.org" target="_blank">NRICH Mathematical Resources</a></li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Math Club</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
