@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Math Club</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #f5f6fa;
+      color: #2f3640;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #273c75;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    nav {
+      background: #40739e;
+      display: flex;
+      justify-content: center;
+      padding: 0.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+      transition: opacity 0.2s;
+    }
+
+    nav a:hover {
+      opacity: 0.8;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #273c75;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    button {
+      background: #44bd32;
+      color: white;
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background: #4cd137;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Math Club</h1>
+    <p id="greeting"></p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Events</a>
+    <a href="#">Members</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <main>
+    <h2>Welcome to the Math Club!</h2>
+    <p>
+      We're a group of students passionate about math, problem-solving, and having fun with numbers.
+      Join us every week for competitions, tutoring, and math challenges!
+    </p>
+
+    <h3>Next Event Countdown</h3>
+    <p>Days until our next meeting: <span id="days-until"></span></p>
+    <button onclick="updateCountdown()">Recalculate</button>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Math Club | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // --- Dynamic Greeting ---
+    const greeting = document.getElementById("greeting");
+    const hour = new Date().getHours();
+    if (hour < 12) greeting.textContent = "Good morning, Mathletes!";
+    else if (hour < 18) greeting.textContent = "Good afternoon, Mathletes!";
+    else greeting.textContent = "Good evening, Mathletes!";
+
+    // --- Countdown Script ---
+    function updateCountdown() {
+      // Example: next meeting is next Friday at 3 PM
+      const today = new Date();
+      const nextEvent = new Date();
+      nextEvent.setDate(today.getDate() + ((5 - today.getDay() + 7) % 7 || 7)); // Friday
+      nextEvent.setHours(15, 0, 0, 0);
+
+      const diffTime = nextEvent - today;
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      document.getElementById("days-until").textContent = diffDays;
+    }
+    updateCountdown();
+
+    // --- Dynamic Year ---
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
