@@ -29,13 +29,14 @@
       background: #40739e;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       padding: 0.5rem;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 1rem;
+      margin: 0.5rem 1rem;
       font-weight: bold;
       transition: opacity 0.2s;
     }
@@ -86,6 +87,8 @@
     <a href="#">Home</a>
     <a href="#">Events</a>
     <a href="#">Members</a>
+    <a href="#">Timeline</a>
+    <a href="#">Sources</a>
     <a href="#">Contact</a>
   </nav>
 
@@ -115,10 +118,9 @@
 
     // --- Countdown Script ---
     function updateCountdown() {
-      // Example: next meeting is next Friday at 3 PM
       const today = new Date();
       const nextEvent = new Date();
-      nextEvent.setDate(today.getDate() + ((5 - today.getDay() + 7) % 7 || 7)); // Friday
+      nextEvent.setDate(today.getDate() + ((5 - today.getDay() + 7) % 7 || 7)); // Next Friday
       nextEvent.setHours(15, 0, 0, 0);
 
       const diffTime = nextEvent - today;
