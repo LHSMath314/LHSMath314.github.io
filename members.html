@@ -4,89 +4,204 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Math Club | Members</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+
   <style>
+    :root {
+      --bg: #f5f6fa;
+      --nav: #40739e;
+      --header-start: #273c75;
+      --header-end: #192a56;
+      --accent: #44bd32;
+      --text: #2f3640;
+      --muted: rgba(47,54,64,0.75);
+      --card-bg: #ffffff;
+    }
+
     body {
       font-family: "Segoe UI", sans-serif;
-      background: #f5f6fa;
-      color: #2f3640;
+      background: var(--bg);
+      color: var(--text);
       margin: 0;
       padding: 0;
+      line-height: 1.6;
     }
 
     header {
-      background: #273c75;
+      background: linear-gradient(135deg, var(--header-start), var(--header-end));
       color: white;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2.5rem 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.4rem;
     }
 
     nav {
-      background: #40739e;
+      background: var(--nav);
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      padding: 0.5rem;
+      gap: 0.6rem;
+      padding: 0.7rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0.5rem 1rem;
+      padding: 0.6rem 0.9rem;
       font-weight: bold;
-      transition: opacity 0.2s;
+      border-radius: 6px;
+      transition: all 0.2s ease;
     }
 
     nav a:hover {
-      opacity: 0.8;
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-2px);
+    }
+
+    nav a.active {
+      background: rgba(255,255,255,0.2);
     }
 
     main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 1000px;
+      margin: 2.5rem auto;
+      padding: 2rem;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      color: var(--header-start);
+      border-left: 5px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    .leaders {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .leaders p {
+      font-size: 1.1rem;
+      color: var(--text);
+      margin: 0.3rem 0;
+    }
+
+    .leaders span {
+      font-weight: bold;
+      color: var(--accent);
+    }
+
+    .member-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .member-card {
+      background: linear-gradient(180deg, #ffffff, #f9fbff);
+      border-radius: 10px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(23,34,58,0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .member-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(23,34,58,0.1);
+    }
+
+    .member-card h3 {
+      margin: 0.5rem 0;
+      color: var(--header-start);
+      font-size: 1.1rem;
+    }
+
+    .member-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin: 0;
     }
 
     footer {
       text-align: center;
       padding: 1rem;
-      background: #273c75;
+      background: var(--header-start);
       color: white;
-      margin-top: 2rem;
+      margin-top: 3rem;
+      border-top: 3px solid var(--accent);
     }
 
-    ul {
-      line-height: 1.8;
+    footer p {
+      margin: 0.3rem 0;
+      font-size: 0.95rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Members</h1>
+    <h1>Our Members</h1>
+    <p>Meet the minds behind the Math Club — a community of problem solvers, thinkers, and innovators.</p>
   </header>
 
- <nav>
+  <nav>
     <a href="index.html">Home</a>
     <a href="events.html">Events</a>
-    <a href="members.html">Members</a>
-    <a href="topics.html">Topics</a>
+    <a href="members.html" class="active">Members</a>
+    <a href="timeline.html">Timeline</a>
     <a href="sources.html">Sources</a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSccm9YueGPrGNLYNw8a2W_CUUANmKltz6ejm1NGX2DcSC3YNw/viewform?usp=dialog" target="_blank" >Join</a>
+    <a href="contact.html">Contact</a>
   </nav>
-  
+
   <main>
-    <h2>Welcome to the members Page!</h2>
-    <p>Our facilitator: Andrew McCulley</p>
-    <p>Our assistant facilitator: Emery</p>
+    <section class="leaders">
+      <h2>Leadership</h2>
+      <p><span>Facilitator:</span> Andrew McCulley</p>
+      <p><span>Assistant Facilitator:</span> Emery Johnson</p>
+    </section>
+
+    <section>
+      <h2>Members</h2>
+      <div class="member-grid">
+        <div class="member-card"><h3>Alex Chen</h3><p>Member</p></div>
+        <div class="member-card"><h3>Jordan Lee</h3><p>Member</p></div>
+        <div class="member-card"><h3>Sophia Nguyen</h3><p>Member</p></div>
+        <div class="member-card"><h3>David Kim</h3><p>Member</p></div>
+        <div class="member-card"><h3>Maria Lopez</h3><p>Member</p></div>
+        <div class="member-card"><h3>Isaac Patel</h3><p>Member</p></div>
+        <div class="member-card"><h3>Liam Carter</h3><p>Member</p></div>
+        <div class="member-card"><h3>Olivia Rivera</h3><p>Member</p></div>
+        <div class="member-card"><h3>Emma Thompson</h3><p>Member</p></div>
+        <div class="member-card"><h3>Ethan Williams</h3><p>Member</p></div>
+        <div class="member-card"><h3>Chloe Anderson</h3><p>Member</p></div>
+        <div class="member-card"><h3>Noah Davis</h3><p>Member</p></div>
+        <div class="member-card"><h3>Grace Miller</h3><p>Member</p></div>
+        <div class="member-card"><h3>Lucas Brown</h3><p>Member</p></div>
+        <div class="member-card"><h3>Ava Scott</h3><p>Member</p></div>
+      </div>
+    </section>
   </main>
 
- <footer>
-    <p>© LHS Math Club</p>
+  <footer>
+    <p>© <span id="year"></span> LHS Math Club | All Rights Reserved</p>
   </footer>
 
-  
-</body
-</html>
+  <script>
+    // highlight current nav link
+    const path = window.location.pathname.split("/").pop();
+    document.querySelectorAll("nav a").forEach(a => {
+      if (a.getAttribute("href") === path) a.classList.add("active");
+    });
 
+    // dynamic year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
