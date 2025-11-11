@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LHS Math Club</title>
+  <title>Math Club | Home</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+
   <style>
     body {
       font-family: "Segoe UI", sans-serif;
@@ -11,18 +16,25 @@
       color: #2f3640;
       margin: 0;
       padding: 0;
+      line-height: 1.6;
     }
 
     header {
-      background: #273c75;
+      background: linear-gradient(135deg, #273c75, #192a56);
       color: white;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2.5rem 1rem;
     }
 
-    h1 {
+    header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      opacity: 0.9;
     }
 
     nav {
@@ -30,28 +42,61 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      padding: 0.5rem;
+      padding: 0.6rem;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0.5rem 1rem;
+      margin: 0.6rem 1rem;
       font-weight: bold;
-      transition: opacity 0.2s;
+      transition: transform 0.2s, opacity 0.2s;
     }
 
     nav a:hover {
-      opacity: 0.8;
+      opacity: 0.85;
+      transform: scale(1.05);
     }
 
     main {
-      max-width: 800px;
+      max-width: 900px;
       margin: 2rem auto;
-      padding: 1rem;
+      padding: 2rem;
       background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: #273c75;
+      border-left: 5px solid #44bd32;
+      padding-left: 10px;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    button, a.button {
+      background: #44bd32;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 0.5rem;
+      transition: background 0.2s;
+    }
+
+    button:hover, a.button:hover {
+      background: #4cd137;
     }
 
     footer {
@@ -62,87 +107,101 @@
       margin-top: 2rem;
     }
 
-    button {
-      background: #44bd32;
-      color: white;
-      border: none;
-      padding: 0.6rem 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    button:hover {
-      background: #4cd137;
+    footer p {
+      margin: 0.5rem 0;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>LHS Math Club</h1>
-    <p id="greeting"></p>
+    <h1>Math Club</h1>
+    <p id="greeting">Welcome, Mathletes!</p>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="events.html">Events</a>
-    <a href="members.html">Members</a>
-    <a href="topics.html">Topics</a>
-    <a href="sources.html">Sources</a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSccm9YueGPrGNLYNw8a2W_CUUANmKltz6ejm1NGX2DcSC3YNw/viewform?usp=dialog" target="_blank" >Join</a>
-  </nav>
-
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Math Club</title>
+  <!-- Shared navigation -->
+  <div id="navbar"></div>
 
   <main>
-    <h2>Welcome to the Math Club!</h2>
-    <p>
-      We're a group of students passionate about math, problem-solving, and having fun with numbers.
-      Join us every week for lectures, tutoring, or fun problems!
-    </p>
+    <!-- Welcome Section -->
+    <section id="welcome">
+      <h2>Math Is for Everyone</h2>
+      <p>
+        Whether you're still figuring out fractions or diving deep into calculus,
+        our Math Club is a place to explore, learn, and have fun with math.
+        You don't have to be an expert — just curious!
+      </p>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities">
+      <h2>What We Do</h2>
+      <ul>
+        <li>💬 Weekly problem-solving sessions & creative math challenges</li>
+        <li>📘 Study groups for competitions like AMC, AIME, and SAT</li>
+        <li>🧩 Fun puzzles, games, and mini-projects</li>
+        <li>🎓 Short talks about fascinating topics like infinity, symmetry, and complex numbers</li>
+        <li>🚀 Collaborative projects and math-inspired coding experiments</li>
+      </ul>
+    </section>
+
+    <!-- Events Preview -->
+    <section id="events-preview">
+      <h2>Upcoming Events</h2>
+      <p><strong>Next Meeting:</strong> Friday, 3 PM — Room 202</p>
+      <p><strong>Topic:</strong> “The Beauty of Patterns: From Art to Algebra”</p>
+      <a href="events.html" class="button">See Full Event List →</a>
+    </section>
+
+    <!-- Math Fact of the Week -->
+    <section id="math-fact">
+      <h2>Math Fact of the Week</h2>
+      <p id="fact"></p>
+    </section>
+
+    <!-- Why Join -->
+    <section id="join">
+      <h2>Why Join the Math Club?</h2>
+      <p>
+        Because math isn’t just numbers — it’s the language of logic, creativity, and discovery.
+        Whether you love puzzles, want to boost your skills, or just enjoy learning new things,
+        you’ll find your people here.
+      </p>
+      <a href="members.html" class="button">Meet Our Members</a>
+    </section>
   </main>
 
-  <section id="welcome">
-    <h2>Math Is for Everyone</h2>
-    <p>
-      Whether you’re still figuring out trigonometry or already exploring beyond calculus, this Math Club is a place to grow, share, and have fun with math.
-      We believe that curiosity is more important than confidence — if you’re willing to explore, you belong here.
-    </p>
-  </section>
-</html>
-
-
   <footer>
-    <p>© LHS Math Club</p>
+    <p>© <span id="year"></span> Math Club | All Rights Reserved</p>
   </footer>
 
   <script>
-    // --- Dynamic Greeting ---
-    const greeting = document.getElementById("greeting");
+    // Load shared navigation bar
+    fetch("nav.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+      });
+
+    // Greeting based on time of day
     const hour = new Date().getHours();
+    const greeting = document.getElementById("greeting");
     if (hour < 12) greeting.textContent = "Good morning, Mathletes!";
     else if (hour < 18) greeting.textContent = "Good afternoon, Mathletes!";
     else greeting.textContent = "Good evening, Mathletes!";
 
-    // --- Countdown Script ---
-    function updateCountdown() {
-      const today = new Date();
-      const nextEvent = new Date();
-      nextEvent.setDate(today.getDate() + ((5 - today.getDay() + 7) % 7 || 7)); // Next Friday
-      nextEvent.setHours(15, 0, 0, 0);
+    // Math facts (random)
+    const facts = [
+      "Zero is the only number that can't be represented in Roman numerals.",
+      "The Fibonacci sequence appears in pinecones, sunflowers, and seashells.",
+      "A circle encloses the maximum area for a given perimeter — nature loves efficiency!",
+      "The word 'mathematics' comes from the Greek for 'that which is learned.'",
+      "Imaginary numbers help describe real phenomena like electricity and waves.",
+      "There are as many even numbers as there are numbers altogether — infinity is weird!"
+    ];
+    document.getElementById("fact").textContent =
+      facts[Math.floor(Math.random() * facts.length)];
 
-      const diffTime = nextEvent - today;
-      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-      document.getElementById("days-until").textContent = diffDays;
-    }
-    updateCountdown();
-
-    // --- Dynamic Year ---
+    // Dynamic year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
