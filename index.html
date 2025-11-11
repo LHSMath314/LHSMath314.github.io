@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Math Club | Home</title>
 
   <!-- Favicon -->
@@ -10,106 +10,132 @@
   <link rel="apple-touch-icon" href="favicon.png">
 
   <style>
-    body {
-      font-family: "Segoe UI", sans-serif;
-      background: #f5f6fa;
-      color: #2f3640;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
+    :root{
+      --bg:#f5f6fa;
+      --nav:#40739e;
+      --header-start:#273c75;
+      --header-end:#192a56;
+      --accent:#44bd32;
+      --card:#ffffff;
+      --text:#2f3640;
+      --muted:rgba(47,54,64,0.75);
     }
 
-    header {
-      background: linear-gradient(135deg, #273c75, #192a56);
-      color: white;
-      text-align: center;
-      padding: 2.5rem 1rem;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.8rem;
+    header{
+      background: linear-gradient(135deg, var(--header-start), var(--header-end));
+      color:white;
+      text-align:center;
+      padding:2.5rem 1rem;
+    }
+    header h1{margin:0;font-size:2.6rem;letter-spacing:0.5px}
+    header p{margin:0.5rem 0 0;font-size:1.05rem;color:rgba(255,255,255,0.92)}
+
+    /* Navigation */
+    nav.site-nav{
+      background:var(--nav);
+      display:flex;
+      justify-content:center;
+      gap:0.6rem;
+      flex-wrap:wrap;
+      padding:0.6rem;
+      box-shadow:0 2px 0 rgba(0,0,0,0.03);
+    }
+    nav.site-nav a{
+      color:white;
+      text-decoration:none;
+      padding:0.6rem 0.9rem;
+      border-radius:6px;
+      font-weight:600;
+      transition:transform .12s ease, background .12s ease, box-shadow .12s ease;
+    }
+    nav.site-nav a:hover{
+      transform:translateY(-2px);
+      box-shadow:0 6px 18px rgba(0,0,0,0.08);
+      opacity:0.95;
+    }
+    nav.site-nav a.active{
+      background:linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
+      box-shadow:inset 0 -3px 0 rgba(0,0,0,0.06);
     }
 
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-      opacity: 0.9;
+    main{
+      max-width:1000px;
+      margin:2rem auto;
+      padding:2rem;
+      background:var(--card);
+      border-radius:12px;
+      box-shadow:0 10px 30px rgba(23,34,58,0.06);
     }
 
-    nav {
-      background: #40739e;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 0.6rem;
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:1.5rem;
+    }
+    @media(max-width:900px){
+      .grid{grid-template-columns:1fr}
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0.6rem 1rem;
-      font-weight: bold;
-      transition: transform 0.2s, opacity 0.2s;
+    section{margin-bottom:1.25rem}
+    h2{
+      margin:0 0 0.5rem 0;
+      color:var(--header-start);
+      font-size:1.25rem;
+      display:inline-block;
+      padding-left:0.65rem;
+      border-left:4px solid var(--accent);
+    }
+    p{margin:0 0 0.75rem 0;color:var(--muted)}
+
+    ul{margin:0;padding-left:1.2rem}
+    li{margin:0.45rem 0}
+
+    .card{
+      background:linear-gradient(180deg, #ffffff, #fbfdff);
+      padding:1rem;
+      border-radius:10px;
+      box-shadow:0 6px 18px rgba(23,34,58,0.04);
     }
 
-    nav a:hover {
-      opacity: 0.85;
-      transform: scale(1.05);
+    .btn{
+      display:inline-block;
+      background:var(--accent);
+      color:white;
+      padding:0.6rem 0.9rem;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:700;
+      border:none;
+      cursor:pointer;
+    }
+    .btn:hover{filter:brightness(1.03)}
+
+    .fact{
+      font-style:italic;
+      color:#14304a;
     }
 
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    footer{
+      margin:2rem auto 0;
+      max-width:1000px;
+      text-align:center;
+      color:white;
+      background:linear-gradient(90deg,var(--header-start),var(--header-end));
+      padding:0.9rem 1rem;
+      border-radius:10px;
     }
-
-    section {
-      margin-bottom: 2rem;
-    }
-
-    h2 {
-      color: #273c75;
-      border-left: 5px solid #44bd32;
-      padding-left: 10px;
-    }
-
-    ul {
-      padding-left: 1.5rem;
-    }
-
-    button, a.button {
-      background: #44bd32;
-      color: white;
-      border: none;
-      padding: 0.7rem 1.2rem;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 1rem;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 0.5rem;
-      transition: background 0.2s;
-    }
-
-    button:hover, a.button:hover {
-      background: #4cd137;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #273c75;
-      color: white;
-      margin-top: 2rem;
-    }
-
-    footer p {
-      margin: 0.5rem 0;
-    }
+    footer p{margin:0;font-size:0.95rem}
   </style>
 </head>
 <body>
@@ -118,56 +144,75 @@
     <p id="greeting">Welcome, Mathletes!</p>
   </header>
 
-  <!-- Shared navigation -->
-  <div id="navbar"></div>
+  <!-- Inline navigation with links to all pages -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="index.html" id="nav-home">Home</a>
+    <a href="events.html" id="nav-events">Events</a>
+    <a href="members.html" id="nav-members">Members</a>
+    <a href="topics.html" id="nav-topics">Topics</a>
+    <a href="sources.html" id="nav-sources">Sources</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSccm9YueGPrGNLYNw8a2W_CUUANmKltz6ejm1NGX2DcSC3YNw/viewform?usp=dialog" id="nav-apply">Apply</a>
+  </nav>
 
   <main>
-    <!-- Welcome Section -->
-    <section id="welcome">
-      <h2>Math Is for Everyone</h2>
-      <p>
-        Whether you're still figuring out fractions or diving deep into calculus,
-        our Math Club is a place to explore, learn, and have fun with math.
-        You don't have to be an expert — just curious!
-      </p>
-    </section>
+    <div class="grid">
+      <!-- Left column (main content) -->
+      <div>
+        <section id="welcome">
+          <h2>Math Is for Everyone</h2>
+          <p>
+            Whether you're learning your first fractions or exploring advanced topics like
+            calculus and number theory, the Math Club is a friendly place to learn and have fun.
+            Curiosity matters more than prior experience — come try something new!
+          </p>
+        </section>
 
-    <!-- Activities Section -->
-    <section id="activities">
-      <h2>What We Do</h2>
-      <ul>
-        <li>💬 Weekly problem-solving sessions & creative math challenges</li>
-        <li>📘 Study groups for competitions like AMC, AIME, and SAT</li>
-        <li>🧩 Fun puzzles, games, and mini-projects</li>
-        <li>🎓 Short talks about fascinating topics like infinity, symmetry, and complex numbers</li>
-        <li>🚀 Collaborative projects and math-inspired coding experiments</li>
-      </ul>
-    </section>
+        <section id="activities">
+          <h2>What We Do</h2>
+          <div class="card">
+            <ul>
+              <li>💬 Weekly collaborative problem-solving sessions — we work together, no pressure.</li>
+              <li>📘 Study groups & tutoring for tests and competitions (AMC, AIME, SAT).</li>
+              <li>🧩 Puzzles, logic games, and math-themed board nights.</li>
+              <li>🎤 Short, friendly talks on cool topics: fractals, symmetry, prime mysteries, and more.</li>
+              <li>💻 Projects combining math & coding — explore visualizations and simulations.</li>
+            </ul>
+          </div>
+        </section>
 
-    <!-- Events Preview -->
-    <section id="events-preview">
-      <h2>Upcoming Events</h2>
-      <p><strong>Next Meeting:</strong> Friday, 3 PM — Room 202</p>
-      <p><strong>Topic:</strong> “The Beauty of Patterns: From Art to Algebra”</p>
-      <a href="events.html" class="button">See Full Event List →</a>
-    </section>
+        <section id="why-join">
+          <h2>Why Join the Math Club?</h2>
+          <p>
+            Math isn't just about answers — it's about thinking clearly, solving puzzles,
+            and discovering patterns. If you like questions, creativity, or just want help with
+            classwork, you'll find people here who want the same things.
+          </p>
+          <a href="members.html" class="btn" aria-label="Meet our members">Meet Our Members</a>
+        </section>
+      </div>
 
-    <!-- Math Fact of the Week -->
-    <section id="math-fact">
-      <h2>Math Fact of the Week</h2>
-      <p id="fact"></p>
-    </section>
+      <!-- Right column (sidebar) -->
+      <aside>
+        <section id="events-preview" class="card">
+          <h2>Upcoming</h2>
+          <p><strong>Next Meeting:</strong> Friday, 3:00 PM — Room 202</p>
+          <p><strong>Topic:</strong> "The Beauty of Patterns: From Art to Algebra"</p>
+          <a href="events.html" class="btn" style="margin-top:0.5rem;display:inline-block">See All Events</a>
+        </section>
 
-    <!-- Why Join -->
-    <section id="join">
-      <h2>Why Join the Math Club?</h2>
-      <p>
-        Because math isn’t just numbers — it’s the language of logic, creativity, and discovery.
-        Whether you love puzzles, want to boost your skills, or just enjoy learning new things,
-        you’ll find your people here.
-      </p>
-      <a href="members.html" class="button">Meet Our Members</a>
-    </section>
+        <section id="fact-week" class="card" style="margin-top:1rem">
+          <h2>Math Fact</h2>
+          <p id="fact" class="fact">Loading a cool fact...</p>
+        </section>
+
+        <section id="welcome-quote" class="card" style="margin-top:1rem;text-align:center">
+          <h2>Welcome</h2>
+          <p style="margin:0.25rem 0 0 0;color:var(--muted)">
+            “Pure mathematics is, in its way, the poetry of logical ideas.” — Albert Einstein
+          </p>
+        </section>
+      </aside>
+    </div>
   </main>
 
   <footer>
@@ -175,33 +220,52 @@
   </footer>
 
   <script>
-    // Load shared navigation bar
-    fetch("nav.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("navbar").innerHTML = data;
-      });
+    // Highlight the active nav link based on current filename
+    (function highlightNav(){
+      const path = window.location.pathname.split("/").pop() || "index.html";
+      const idMap = {
+        "index.html":"nav-home",
+        "events.html":"nav-events",
+        "members.html":"nav-members",
+        "topics.html":"nav-topics",
+        "sources.html":"nav-sources",
+        "https://docs.google.com/forms/d/e/1FAIpQLSccm9YueGPrGNLYNw8a2W_CUUANmKltz6ejm1NGX2DcSC3YNw/viewform?usp=dialog":"nav-apply"
+      };
+      const navId = idMap[path];
+      if(navId){
+        const el = document.getElementById(navId);
+        if(el) el.classList.add("active");
+      } else {
+        // default to home if unknown
+        const home = document.getElementById("nav-home");
+        if(home) home.classList.add("active");
+      }
+    })();
 
     // Greeting based on time of day
-    const hour = new Date().getHours();
-    const greeting = document.getElementById("greeting");
-    if (hour < 12) greeting.textContent = "Good morning, Mathletes!";
-    else if (hour < 18) greeting.textContent = "Good afternoon, Mathletes!";
-    else greeting.textContent = "Good evening, Mathletes!";
+    (function greeting(){
+      const hr = new Date().getHours();
+      const g = document.getElementById("greeting");
+      if(hr < 12) g.textContent = "Good morning — welcome to Math Club!";
+      else if(hr < 18) g.textContent = "Good afternoon — welcome to Math Club!";
+      else g.textContent = "Good evening — welcome to Math Club!";
+    })();
 
-    // Math facts (random)
-    const facts = [
-      "Zero is the only number that can't be represented in Roman numerals.",
-      "The Fibonacci sequence appears in pinecones, sunflowers, and seashells.",
-      "A circle encloses the maximum area for a given perimeter — nature loves efficiency!",
-      "The word 'mathematics' comes from the Greek for 'that which is learned.'",
-      "Imaginary numbers help describe real phenomena like electricity and waves.",
-      "There are as many even numbers as there are numbers altogether — infinity is weird!"
-    ];
-    document.getElementById("fact").textContent =
-      facts[Math.floor(Math.random() * facts.length)];
+    // Math Fact of the Week (random)
+    (function factOfWeek(){
+      const facts = [
+        "Zero is the only number that can't be represented in Roman numerals.",
+        "The Fibonacci sequence appears in pinecones, sunflowers, and seashells.",
+        "A circle encloses the maximum area for a given perimeter — nature loves efficiency!",
+        "Imaginary numbers help engineers describe real phenomena like alternating current.",
+        "There are infinitely many prime numbers — Euclid proved it over 2000 years ago.",
+        "A Möbius strip has only one side and one edge — topology is wild!"
+      ];
+      const el = document.getElementById("fact");
+      el.textContent = facts[Math.floor(Math.random() * facts.length)];
+    })();
 
-    // Dynamic year in footer
+    // Dynamic year
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
