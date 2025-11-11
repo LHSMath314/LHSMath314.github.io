@@ -7,18 +7,18 @@
   <style>
     body {
       font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(to bottom right, #f5f6fa, #dcdde1);
+      background: #f5f6fa;
       color: #2f3640;
       margin: 0;
       padding: 0;
     }
 
     header {
-      background: linear-gradient(135deg, #273c75, #40739e);
+      background: #273c75;
       color: white;
       text-align: center;
-      padding: 2.5rem 1rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      padding: 2rem 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
     }
 
     nav {
@@ -27,6 +27,7 @@
       justify-content: center;
       flex-wrap: wrap;
       padding: 0.75rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     nav a {
@@ -34,59 +35,64 @@
       text-decoration: none;
       margin: 0.5rem 1rem;
       font-weight: bold;
-      transition: transform 0.2s, opacity 0.2s;
+      transition: opacity 0.2s, transform 0.2s;
     }
 
     nav a:hover {
-      opacity: 0.85;
+      opacity: 0.8;
       transform: scale(1.05);
     }
 
     main {
-      max-width: 900px;
-      margin: 2.5rem auto;
-      padding: 2rem;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1.5rem 2rem;
       background: white;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-      animation: fadeIn 0.6s ease-in-out;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.08);
     }
 
     h1 {
-      font-size: 2.2rem;
-      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
     }
 
     h2 {
       color: #273c75;
       margin-top: 1.5rem;
+      border-bottom: 2px solid #40739e;
+      padding-bottom: 0.3rem;
+    }
+
+    p {
+      line-height: 1.6;
     }
 
     ul {
       list-style-type: none;
       padding: 0;
+      margin-top: 0.5rem;
     }
 
     li {
       background: #f0f3f8;
-      padding: 0.8rem 1rem;
-      border-radius: 6px;
       margin: 0.5rem 0;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
       transition: background 0.2s, transform 0.2s;
     }
 
     li:hover {
-      background: #e0ecff;
-      transform: translateX(4px);
+      background: #e2e8f0;
+      transform: translateX(5px);
     }
 
-    a {
+    li a {
       color: #273c75;
       text-decoration: none;
       font-weight: 600;
     }
 
-    a:hover {
+    li a:hover {
       text-decoration: underline;
     }
 
@@ -96,26 +102,12 @@
       background: #273c75;
       color: white;
       margin-top: 2rem;
-      font-size: 0.9rem;
-      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Sources & References</h1>
-    <p>Trusted resources that help us learn, grow, and explore the world of mathematics.</p>
   </header>
 
   <nav>
@@ -126,32 +118,30 @@
     <a href="sources.html">Sources</a>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSccm9YueGPrGNLYNw8a2W_CUUANmKltz6ejm1NGX2DcSC3YNw/viewform?usp=dialog" target="_blank">Join</a>
   </nav>
-
+  
   <main>
     <h2>Learning Resources</h2>
-    <p>These are the platforms, educators, and communities that inspire our club’s exploration of math:</p>
+    <p>Here are some of the resources and materials our Math Club uses for problems, inspiration, and learning:</p>
+
     <ul>
-      <li><a href="https://tutorial.math.lamar.edu/" target="_blank">Paul’s Online Math Notes</a> — clear explanations of calculus, algebra, and more.</li>
-      <li><a href="https://www.khanacademy.org/math" target="_blank">Khan Academy – Math Section</a> — lessons, exercises, and challenges for every level.</li>
-      <li><a href="https://youtube.com/@veritasium" target="_blank">Veritasium</a> — fascinating explorations of science and mathematics in real life.</li>
-      <li><a href="https://youtube.com/@3blue1brown" target="_blank">3Blue1Brown</a> — beautiful visual math explanations with deep insight.</li>
+      <li><a href="https://tutorial.math.lamar.edu/" target="_blank">Paul’s Online Notes</a> – Great for detailed explanations on calculus and algebra.</li>
+      <li><a href="https://www.khanacademy.org/math" target="_blank">Khan Academy – Math Section</a> – Offers guided lessons and practice problems.</li>
+      <li><a href="https://youtube.com/@veritasium" target="_blank">Veritasium</a> – Insightful science and math-based discussions.</li>
+      <li><a href="https://youtube.com/@3blue1brown" target="_blank">3Blue1Brown</a> – Visual explanations that make complex math concepts intuitive.</li>
     </ul>
 
     <h2>Our Club Resources</h2>
-    <p>Explore materials from our very own sessions, notes, and challenges:</p>
+    <p>These include videos from our meetings, notes, or fun practice problems!</p>
+
     <ul>
-      <li><a href="https://drive.google.com/drive/folders/1nF1qPUwZaQOAKFrgJUMLRqCLd5-shNg-?usp=sharing" target="_blank">Lecture Notes</a> — review notes and written explanations from our club meetings.</li>
-      <li><a href="https://drive.google.com/drive/folders/1GNtqrtr9WkMfiGt8VCeEmoQSR6rdIJtB?usp=sharing" target="_blank">Lecture Videos</a> — revisit recorded discussions and problem-solving sessions.</li>
-      <li><a href="https://drive.google.com/drive/folders/1jMM93d_aZEeHu6gyBuZtljbh50rWP-1G?usp=sharing" target="_blank">Fun Problems</a> — dive into interesting math puzzles to challenge yourself!</li>
+      <li><a href="https://drive.google.com/drive/folders/1nF1qPUwZaQOAKFrgJUMLRqCLd5-shNg-?usp=sharing" target="_blank">Lecture Notes</a> – Summaries and examples from our weekly sessions.</li>
+      <li><a href="https://drive.google.com/drive/folders/1GNtqrtr9WkMfiGt8VCeEmoQSR6rdIJtB?usp=sharing" target="_blank">Lecture Videos</a> – Recordings of past discussions and problem-solving sessions.</li>
+      <li><a href="https://drive.google.com/drive/folders/1jMM93d_aZEeHu6gyBuZtljbh50rWP-1G?usp=sharing" target="_blank">Fun Problems</a> – Interesting problems to test and build your mathematical skills!</li>
     </ul>
   </main>
 
   <footer>
-    <p>© <span id="year"></span> LHS Math Club | Made with curiosity and logic ♾️</p>
+    <p>© LHS Math Club</p>
   </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
