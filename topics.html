@@ -80,6 +80,7 @@
       color: var(--header-start);
       border-left: 5px solid var(--accent);
       padding-left: 10px;
+      margin-top: 2.5rem;
     }
 
     p {
@@ -90,7 +91,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1.5rem;
-      margin-top: 2rem;
+      margin-top: 1.7rem;
     }
 
     .topic-card {
@@ -135,6 +136,7 @@
   </style>
 </head>
 <body>
+
   <header>
     <h1>Topics of Exploration</h1>
   </header>
@@ -149,75 +151,166 @@
   </nav>
 
   <main>
+
+    <!-- HIGH SCHOOL -->
     <section>
-      <h2>Core & Advanced Topics</h2>
+      <h2>High School Mathematics</h2>
       <p>
-        These topics range from high school essentials to fascinating ideas found in advanced
-        mathematics. Some may be familiar, others may open completely new worlds.
+        These topics form the foundation of mathematical thinking — the essential tools used in nearly every higher branch.
       </p>
 
       <div class="topic-grid">
         <div class="topic-card">
+          <h3>Algebra</h3>
+          <p>Equations, functions, and the language of mathematical relationships.</p>
+        </div>
+
+        <div class="topic-card">
+          <h3>Geometry</h3>
+          <p>Shapes, logic, and spatial reasoning — the oldest branch of math.</p>
+        </div>
+
+        <div class="topic-card">
           <h3>Trigonometry</h3>
-          <p>Exploring the relationships between angles and sides of triangles, and their applications.</p>
+          <p>Angles, triangles, and the circular functions that power physics.</p>
         </div>
 
         <div class="topic-card">
           <h3>Pre-Calculus</h3>
-          <p>Preparing for calculus through functions, limits, and algebraic reasoning.</p>
+          <p>Preparing for limits, derivatives, and advanced functions.</p>
         </div>
 
         <div class="topic-card">
-          <h3>Calculus</h3>
-          <p>The mathematics of change — derivatives, integrals, and the beauty of continuous motion.</p>
+          <h3>Probability & Statistics</h3>
+          <p>Understanding randomness, data, and real-world uncertainty.</p>
         </div>
 
         <div class="topic-card">
-          <h3>Euler’s Identity</h3>
-          <p>The elegant equation that connects five of math’s most important constants.</p>
+          <h3>AP Calculus</h3>
+          <p>The math of change — motion, accumulation, and foundational analysis.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLLEGE -->
+    <section>
+      <h2>College-Level Mathematics</h2>
+      <p>
+        These fields expand your perspective, introducing new structures and powerful methods used in science, engineering, and pure math.
+      </p>
+
+      <div class="topic-grid">
+        <div class="topic-card">
+          <h3>Calculus I–III</h3>
+          <p>Deepening understanding of derivatives, integrals, vectors, and multivariate systems.</p>
         </div>
 
         <div class="topic-card">
-          <h3>Complex Analysis</h3>
-          <p>Diving into the mysterious and beautiful world of complex numbers and functions.</p>
+          <h3>Linear Algebra</h3>
+          <p>Matrices, vectors, transformations — the backbone of modern computation.</p>
         </div>
 
         <div class="topic-card">
-          <h3>Hypercomplex Numbers</h3>
-          <p>Going beyond the complex plane — quaternions, octonions, and higher dimensions.</p>
+          <h3>Differential Equations</h3>
+          <p>Modeling systems that evolve over time, from physics to biology.</p>
+        </div>
+
+        <div class="topic-card">
+          <h3>Discrete Mathematics</h3>
+          <p>Logic, graphs, algorithms, and the foundation of computer science.</p>
+        </div>
+
+        <div class="topic-card">
+          <h3>Proof Writing</h3>
+          <p>Learning how to reason rigorously and communicate mathematical ideas.</p>
         </div>
 
         <div class="topic-card">
           <h3>Number Theory</h3>
-          <p>The study of integers, primes, and the patterns that hide within them.</p>
+          <p>The deep study of primes, patterns, and the fundamental nature of integers.</p>
         </div>
 
         <div class="topic-card">
-          <h3></h3>
-          <p></p>
-        </div>
-
-           <div class="topic-card">
-          <h3></h3>
-          <p></p>
+          <h3>Complex Analysis</h3>
+          <p>The world of complex functions — elegant, powerful, and full of surprises.</p>
         </div>
       </div>
     </section>
+
+    <!-- BEYOND -->
+    <section>
+      <h2>Beyond Mathematics</h2>
+      <p>
+        These topics venture into the frontier — areas where mathematics becomes abstract, creative, and sometimes mysterious.
+      </p>
+
+      <div class="topic-grid">
+        <div class="topic-card">
+          <h3>Hypercomplex Numbers</h3>
+          <p>Quaternions, octonions, and the strange algebras beyond the complex plane.</p>
+        </div>
+
+        <div class="topic-card">
+          <h3>Real Analysis & Topology</h3>
+          <p>The rigorous study of continuity, limits, shapes, and spaces.</p>
+        </div>
+
+        <div class="topic-card">
+          <h3>Abstract Algebra</h3>
+          <p>Groups, rings, and fields — the structures underlying modern math.</p>
+        </div>
+
+        <div class="topic-card">
+          <h3>Differential Geometry</h3>
+          <p>The mathematics of curves, surfaces, and the shape of space itself.</p>
+        </div>
+
+        <div class="topic-card">
+          <h3>Tensor Calculus</h3>
+          <p>The language of relativity, spacetime curvature, and modern physics.</p>
+        </div>
+
+        <div class="topic-card">
+          <h3>Mathematical Logic</h3>
+          <p>Foundations of truth, computability, and the limits of knowledge.</p>
+        </div>
+
+        <div class="topic-card">
+          <h3>Frontier Structures</h3>
+          <p>Undiscovered algebras and theoretical systems still waiting for purpose.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONNECTIONS -->
+    <section>
+      <h2>How They All Connect</h2>
+      <p>
+        Mathematics is not a collection of isolated subjects — it is a single, interconnected universe.  
+        Algebra leads to vector spaces used in linear algebra.  
+        Trigonometry and calculus become tools for differential equations.  
+        These ideas merge into multivariable calculus, which becomes the language of physics.  
+        Abstract algebra and topology describe symmetry and space.  
+        And beyond all of them lie deeper structures waiting to be uncovered.
+        <br><br>
+        As you explore these branches, you’re not just learning topics — you’re discovering the patterns that shape the world itself.
+      </p>
+    </section>
+
   </main>
 
- <footer>
-<p style="color: white;"> <span id="year"></span> LHS Math Club | Made with curiosity and logic ♾️</p>
-</footer>
+  <footer>
+    <p style="color: white;"><span id="year"></span> LHS Math Club | Made with curiosity and logic ♾️</p>
+  </footer>
 
   <script>
-    // highlight current nav link
     const path = window.location.pathname.split("/").pop();
     document.querySelectorAll("nav a").forEach(a => {
       if (a.getAttribute("href") === path) a.classList.add("active");
     });
 
-    // dynamic year
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
