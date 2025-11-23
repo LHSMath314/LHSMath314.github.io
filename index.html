@@ -11,264 +11,513 @@
 
   <style>
     :root{
-      --bg:#f5f6fa;
-      --nav:#40739e;
-      --header-start:#273c75;
-      --header-end:#192a56;
-      --accent:#44bd32;
-      --card:#ffffff;
-      --text:#2f3640;
-      --muted:rgba(47,54,64,0.75);
+      --bg: #f6f8fc;
+      --card: #ffffff;
+      --muted: rgba(47,54,64,0.65);
+      --text: #18233a;
+      --primary-1: #4a90e2; /* playful blue */
+      --primary-2: #6ad1ff; /* light cyan */
+      --accent: #44bd32; /* lime green accent (kept) */
+      --glow: rgba(106,209,255,0.14);
+      --nav: linear-gradient(90deg, #4a90e2 0%, #2b73d6 100%);
+      --shadow-1: 0 8px 20px rgba(24,35,58,0.06);
+      --shadow-2: 0 6px 16px rgba(24,35,58,0.04);
+      --radius-lg: 14px;
+      --radius-md: 10px;
     }
 
+    /* Reset & base */
     *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0;
-      font-family: "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
-      background:var(--bg);
+      font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, system-ui, -apple-system;
+      background: linear-gradient(180deg, #f6f8fc 0%, #eef4fb 100%);
       color:var(--text);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
-      line-height:1.6;
+      line-height:1.5;
+      padding:2rem 1rem;
     }
 
-    header{
-      background: linear-gradient(135deg, var(--header-start), var(--header-end));
-      color:white;
-      text-align:center;
-      padding:2.5rem 1rem;
-    }
-    header h1{margin:0;font-size:2.6rem;letter-spacing:0.5px}
-    header p{margin:0.5rem 0 0;font-size:1.05rem;color:rgba(255,255,255,0.92)}
-
-    /* Navigation */
-    nav.site-nav{
-      background:var(--nav);
-      display:flex;
-      justify-content:center;
-      gap:0.6rem;
-      flex-wrap:wrap;
-      padding:0.6rem;
-      box-shadow:0 2px 0 rgba(0,0,0,0.03);
-    }
-    nav.site-nav a{
-      color:white;
-      text-decoration:none;
-      padding:0.6rem 0.9rem;
-      border-radius:6px;
-      font-weight:600;
-      transition:transform .12s ease, background .12s ease, box-shadow .12s ease;
-    }
-    nav.site-nav a:hover{
-      transform:translateY(-2px);
-      box-shadow:0 6px 18px rgba(0,0,0,0.08);
-      opacity:0.95;
-    }
-    nav.site-nav a.active{
-      background:linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
-      box-shadow:inset 0 -3px 0 rgba(0,0,0,0.06);
-    }
-
-    main{
-      max-width:1000px;
-      margin:2rem auto;
-      padding:2rem;
-      background:var(--card);
-      border-radius:12px;
-      box-shadow:0 10px 30px rgba(23,34,58,0.06);
-    }
-
-    .grid{
+    /* Header */
+    .hero{
+      max-width:1100px;
+      margin:0 auto 1.5rem;
+      border-radius:var(--radius-lg);
+      overflow:hidden;
+      background:linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.86) 60%);
+      box-shadow: var(--shadow-1);
       display:grid;
       grid-template-columns: 1fr 360px;
-      gap:1.5rem;
     }
-    @media(max-width:900px){
-      .grid{grid-template-columns:1fr}
+    @media(max-width:960px){
+      .hero{grid-template-columns:1fr}
     }
 
-    section{margin-bottom:1.25rem}
+    .hero-left{
+      padding:2.1rem 2.2rem;
+      background:
+        radial-gradient(600px 120px at 10% 20%, var(--glow), transparent 20%),
+        linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.2));
+    }
+    .club-title{
+      margin:0;
+      font-size:2.25rem;
+      letter-spacing:0.2px;
+      display:flex;
+      gap:0.75rem;
+      align-items:center;
+    }
+    .logo-badge{
+      width:56px;
+      height:56px;
+      border-radius:12px;
+      background: linear-gradient(135deg, var(--primary-1), var(--primary-2));
+      box-shadow:0 6px 18px rgba(42,106,190,0.18);
+      display:grid;
+      place-items:center;
+      color:white;
+      font-weight:800;
+      font-size:1.05rem;
+    }
+    .hero-sub{
+      margin:0.6rem 0 0;
+      color:var(--muted);
+      font-size:1.02rem;
+    }
+    .greeting{
+      margin-top:1.25rem;
+      display:flex;
+      gap:0.6rem;
+      align-items:center;
+    }
+    .greeting .pill{
+      background:rgba(74,144,226,0.08);
+      padding:0.35rem 0.65rem;
+      border-radius:999px;
+      color:var(--primary-1);
+      font-weight:700;
+      font-size:0.95rem;
+      box-shadow:0 4px 14px rgba(74,144,226,0.06);
+    }
+
+    .hero-right{
+      padding:1.4rem;
+      background: linear-gradient(180deg, rgba(74,144,226,0.06) 0%, rgba(42,106,190,0.02) 100%);
+      display:flex;
+      flex-direction:column;
+      gap:0.9rem;
+      justify-content:center;
+      align-items:stretch;
+    }
+
+    .apply-cta{
+      display:flex;
+      gap:0.8rem;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .apply-btn{
+      background:linear-gradient(90deg,#00c6ff,#6ad1ff);
+      color:#013244;
+      font-weight:800;
+      padding:0.6rem 0.9rem;
+      border-radius:10px;
+      border:none;
+      cursor:pointer;
+      box-shadow:0 8px 30px rgba(106,209,255,0.12);
+      text-decoration:none;
+    }
+    .apply-sub{
+      font-size:0.9rem;
+      color:var(--muted);
+    }
+
+    /* Nav */
+    nav.site-nav{
+      max-width:1100px;
+      margin:1.1rem auto;
+      display:flex;
+      gap:0.6rem;
+      justify-content:center;
+      flex-wrap:wrap;
+      padding:0.45rem;
+    }
+    nav.site-nav a{
+      color:var(--primary-1);
+      text-decoration:none;
+      padding:0.55rem 0.9rem;
+      border-radius:999px;
+      font-weight:700;
+      background:transparent;
+      transition:transform .12s ease, background .12s ease, box-shadow .12s ease;
+      border:1px solid rgba(74,144,226,0.08);
+    }
+    nav.site-nav a:hover{
+      transform:translateY(-4px);
+      box-shadow:0 10px 24px rgba(42,106,190,0.06);
+      background:rgba(74,144,226,0.06);
+    }
+    nav.site-nav a.active{
+      background:linear-gradient(90deg, rgba(74,144,226,0.12), rgba(106,209,255,0.06));
+      box-shadow:inset 0 -3px 0 rgba(0,0,0,0.03);
+      color:var(--primary-1);
+    }
+
+    /* Main card */
+    main{
+      max-width:1100px;
+      margin:1rem auto 2rem;
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:1.4rem;
+    }
+    @media(max-width:960px){
+      main{grid-template-columns:1fr}
+    }
+    .panel{
+      background:var(--card);
+      border-radius:var(--radius-md);
+      padding:1.25rem;
+      box-shadow:var(--shadow-2);
+    }
+
+    /* Headings */
     h2{
-      margin:0 0 0.5rem 0;
-      color:var(--header-start);
-      font-size:1.25rem;
+      margin:0 0 0.6rem 0;
+      color:linear-gradient(90deg, var(--primary-1), var(--primary-2));
+      font-size:1.15rem;
       display:inline-block;
       padding-left:0.65rem;
       border-left:4px solid var(--accent);
     }
-    p{margin:0 0 0.75rem 0;color:var(--muted)}
+    p{margin:0 0 0.85rem 0;color:var(--muted);font-size:0.98rem}
 
-    ul{margin:0;padding-left:1.2rem}
-    li{margin:0.45rem 0}
-
-    .card{
-      background:linear-gradient(180deg, #ffffff, #fbfdff);
-      padding:1rem;
-      border-radius:10px;
-      box-shadow:0 6px 18px rgba(23,34,58,0.04);
+    /* Activities list */
+    .card-list ul{margin:0;padding-left:1.15rem}
+    .card-list li{
+      margin:0.5rem 0;
+      padding:0.35rem 0;
+      list-style:none;
+      display:flex;
+      gap:0.6rem;
+      align-items:flex-start;
+    }
+    .icon-dot{
+      width:32px;height:32px;border-radius:8px;
+      display:grid;place-items:center;font-size:18px;
+      background:linear-gradient(180deg, rgba(74,144,226,0.08), rgba(106,209,255,0.04));
+      color:var(--primary-1);
+      margin-top:3px;
+      flex-shrink:0;
     }
 
+    /* Branches preview */
+    .branches{
+      display:flex;
+      gap:0.9rem;
+      margin-top:0.6rem;
+      flex-wrap:wrap;
+    }
+    .branch{
+      flex:1 1 180px;
+      min-width:150px;
+      background:linear-gradient(180deg,#ffffff,#fbfdff);
+      border-radius:12px;
+      padding:0.8rem;
+      box-shadow:0 8px 20px rgba(24,35,58,0.04);
+      transition:transform .18s ease, box-shadow .18s ease;
+      cursor:default;
+      display:flex;
+      gap:0.8rem;
+      align-items:flex-start;
+    }
+    .branch:hover{
+      transform:translateY(-6px);
+      box-shadow:0 18px 40px rgba(24,35,58,0.08);
+    }
+    .branch .b-icon{
+      width:46px;height:46px;border-radius:10px;
+      display:grid;place-items:center;font-weight:800;color:white;
+      flex-shrink:0;
+      box-shadow:0 8px 20px rgba(0,0,0,0.06);
+    }
+    .b-hs{background:linear-gradient(135deg,#7b61ff,#4d79ff)}
+    .b-college{background:linear-gradient(135deg,#00d4a6,#00b894)}
+    .b-beyond{background:linear-gradient(135deg,#ff7ab6,#ff6a8a)}
+
+    .branch h3{margin:0;font-size:1rem}
+    .branch p{margin:0;color:var(--muted);font-size:0.9rem}
+
+    /* Sidebar cards */
+    aside .panel{position:sticky;top:2.25rem}
+    .event-when{font-weight:800;color:#0e3a57;margin-bottom:0.25rem}
+    .fact{font-style:italic;color:#13314a}
+
+    /* Buttons */
     .btn{
       display:inline-block;
       background:var(--accent);
       color:white;
-      padding:0.6rem 0.9rem;
-      border-radius:8px;
+      padding:0.55rem 0.8rem;
+      border-radius:10px;
       text-decoration:none;
-      font-weight:700;
+      font-weight:800;
       border:none;
       cursor:pointer;
+      font-size:0.95rem;
     }
-    .btn:hover{filter:brightness(1.03)}
+    .btn:focus{outline:3px solid rgba(68,189,50,0.16);outline-offset:3px}
 
-    .fact{
-      font-style:italic;
-      color:#14304a;
-    }
+    .muted-link{color:var(--muted);text-decoration:none;font-weight:700}
 
+    /* Footer */
     footer{
-      margin:2rem auto 0;
-      max-width:1000px;
+      max-width:1100px;
+      margin:1.5rem auto 0;
       text-align:center;
       color:white;
-      background:linear-gradient(90deg,var(--header-start),var(--header-end));
       padding:0.9rem 1rem;
-      border-radius:10px;
+      border-radius:12px;
+      background: linear-gradient(90deg,#2b73d6,#192a56);
+      box-shadow:0 12px 30px rgba(25,42,86,0.08);
     }
-    footer p{margin:0;font-size:0.95rem}
+    footer p{margin:0;font-size:0.95rem;color:rgba(255,255,255,0.95)}
+
+    /* small utilities */
+    .muted-small{color:var(--muted);font-size:0.9rem}
+    .small{font-size:0.88rem}
   </style>
 </head>
 <body>
-  <header>
-    <h1>LHS Math Club</h1>
-    <p id="greeting">Welcome, Mathletes!</p>
+
+  <!-- HERO -->
+  <header class="hero" role="banner" aria-label="LHS Math Club header">
+    <div class="hero-left">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem">
+        <div style="display:flex;align-items:center;gap:0.9rem">
+          <div class="logo-badge" aria-hidden="true">L𝕄</div>
+          <div>
+            <h1 class="club-title">LHS Math Club</h1>
+            <p class="hero-sub">Curiosity-powered math for everyone — from basic tricks to wild beyond-math.</p>
+          </div>
+        </div>
+        <div style="text-align:right">
+          <div class="muted-small">School Year: <strong>2025–2026</strong></div>
+        </div>
+      </div>
+
+      <div class="greeting" style="margin-top:1rem">
+        <div id="greeting" class="pill" aria-live="polite">Welcome, Mathlete!</div>
+        <div class="muted-small">Open to all levels • Weekly meetups</div>
+      </div>
+
+      <!-- Branches preview (new) -->
+      <div style="margin-top:1.1rem">
+        <h2 style="border-left-color:#6b8bff">Explore Our Branches</h2>
+        <p style="margin-top:0.45rem;color:var(--muted)">Three paths — jump into algebra and trig, level up with college math, or chase the wild stuff in Beyond Math.</p>
+
+        <div class="branches" aria-hidden="false">
+          <div class="branch" role="group" aria-label="High School Math">
+            <div class="b-icon b-hs">📘</div>
+            <div>
+              <h3>High School Math</h3>
+              <p>Algebra, geometry, trig, and intro calculus — solid foundations and clever tricks.</p>
+            </div>
+          </div>
+
+          <div class="branch" role="group" aria-label="College Math">
+            <div class="b-icon b-college">🔷</div>
+            <div>
+              <h3>College Math</h3>
+              <p>Multivariable calculus, linear algebra, proofs, and the structures that power modern math.</p>
+            </div>
+          </div>
+
+          <div class="branch" role="group" aria-label="Beyond Math">
+            <div class="b-icon b-beyond">🚀</div>
+            <div>
+              <h3>Beyond Math</h3>
+              <p>Hypercomplex numbers, topology, dynamical systems — weird, gorgeous, and unexpected.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right" aria-hidden="false">
+      <div style="display:flex;flex-direction:column;gap:0.45rem">
+        <div class="apply-cta">
+          <a class="apply-btn" id="nav-apply" href="https://docs.google.com/forms/d/e/1FAIpQLSccm9YueGPrGNLYNw8a2W_CUUANmKltz6ejm1NGX2DcSC3YNw/viewform?usp=dialog" aria-label="Apply to join the math club">Apply Now ✨</a>
+          <div class="apply-sub">We meet after school — everyone welcome</div>
+        </div>
+
+        <div style="display:flex;gap:0.6rem;align-items:center;justify-content:space-between">
+          <div>
+            <div class="muted-small">Next Welcome Session</div>
+            <div style="font-weight:800">Aug 26 • 3:30pm • Room 210</div>
+          </div>
+          <div style="text-align:right">
+            <a class="muted-link" href="events.html">See schedule →</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:0.6rem;padding-top:0.6rem;border-top:1px dashed rgba(24,35,58,0.04);">
+        <div style="font-size:0.95rem;font-weight:800;color:var(--primary-1)">Quick links</div>
+        <div style="margin-top:0.5rem;display:flex;gap:0.45rem;flex-wrap:wrap">
+          <a class="muted-link" href="members.html">Members</a>
+          <a class="muted-link" href="topics.html">Topics</a>
+          <a class="muted-link" href="sources.html">Resources</a>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <!-- Inline navigation with links to all pages -->
+  <!-- NAV -->
   <nav class="site-nav" aria-label="Main navigation">
     <a href="index.html" id="nav-home">Home</a>
     <a href="events.html" id="nav-events">Events</a>
     <a href="members.html" id="nav-members">Members</a>
     <a href="topics.html" id="nav-topics">Topics</a>
     <a href="sources.html" id="nav-sources">Sources</a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSccm9YueGPrGNLYNw8a2W_CUUANmKltz6ejm1NGX2DcSC3YNw/viewform?usp=dialog" id="nav-apply">Apply</a>
+    <!-- apply link is duplicated in hero for prominence -->
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSccm9YueGPrGNLYNw8a2W_CUUANmKltz6ejm1NGX2DcSC3YNw/viewform?usp=dialog" id="nav-apply-2">Apply</a>
   </nav>
 
-  <main>
-    <div class="grid">
-      <!-- Left column (main content) -->
-      <div>
-        <section id="welcome">
-          <h2>Math Is for Everyone</h2>
-          <p>
-            Whether you're learning your learning trigonometry or exploring beyond calculus, this Math Club is a friendly place to learn and have fun.
-            Experience or intellect doesn't matter, what matters is your curiosity — come and join us!
-          </p>
-        </section>
+  <!-- MAIN -->
+  <main role="main">
+    <!-- Left column -->
+    <div class="panel" aria-labelledby="welcome-heading">
+      <section id="welcome">
+        <h2 id="welcome-heading">Math Is for Everyone</h2>
+        <p>
+          Whether you're learning trigonometry or pushing into strange new math, the LHS Math Club is a friendly place to tinker,
+          ask weird questions, and build the skills that make deeper topics possible.
+        </p>
+      </section>
 
-        <section id="activities">
-          <h2>What We Do</h2>
-          <div class="card">
-            <ul>
-              <li>💬 Weekly collaborative problem-solving sessions — we work together, no pressure.</li>
-              <li>📘 Study groups & tutoring for tests and competitions (AMC, ACT, SAT).</li>
-              <li>🧩 Puzzles, logic, and fun problems.</li>
-              <li>🎤 Short, friendly talks on cool topics: Hypercomplex Numbers, complex analysis, Euler's Identity, and more.</li>
-              <li>💻 Projects combining math & coding — explore visualizations and simulations.</li>
-            </ul>
-          </div>
-        </section>
+      <section id="activities" style="margin-top:0.9rem">
+        <h2>What We Do</h2>
+        <div class="card-list">
+          <ul>
+            <li><div class="icon-dot">💬</div><div><strong>Weekly collaborative problem-solving</strong> — teamwork, no pressure.</div></li>
+            <li><div class="icon-dot">📘</div><div><strong>Study groups & tutoring</strong> for exams and competitions (AMC, ACT, SAT).</div></li>
+            <li><div class="icon-dot">🧩</div><div><strong>Puzzles & logic sessions</strong> — hands-on, visual, and fun.</div></li>
+            <li><div class="icon-dot">🎤</div><div><strong>Short talks</strong> on cool topics: Hypercomplex numbers, fractals, topology, and more.</div></li>
+            <li><div class="icon-dot">💻</div><div><strong>Math + code projects</strong> — simulations, visualizations, and small research projects.</div></li>
+          </ul>
+        </div>
 
-        <section id="why-join">
-          <h2>Why Join the Math Club?</h2>
-          <p>
-            Math isn't just about numbers — it's the logical science or patterns and relationships. If you like questions, creativity, or just want help with
-            classwork, you'll find people here who want the same things here!
-          </p>
+        <div style="margin-top:0.9rem">
           <a href="members.html" class="btn" aria-label="Meet our members">Meet Our Members</a>
+        </div>
+      </section>
+
+      <section id="why-join" style="margin-top:1rem">
+        <h2>Why Join the Math Club?</h2>
+        <p>
+          Math isn't just numbers — it's a toolkit for seeing patterns, asking better questions, and tackling puzzles. Whether you want
+          help with classwork, a place to explore advanced ideas, or a community of curious people, you'll find it here.
+        </p>
+      </section>
+    </div>
+
+    <!-- Sidebar -->
+    <aside>
+      <div class="panel" role="complementary" aria-labelledby="upcoming-heading">
+        <section id="events-preview">
+          <h2 id="upcoming-heading">Upcoming</h2>
+          <p class="event-when"><strong>Next Meeting:</strong> Every Tue & Thu after school</p>
+          <p class="small"><strong>Topic:</strong> <span style="font-weight:700">"The beautiful geometry of trigonometry"</span></p>
+          <div style="margin-top:0.8rem;display:flex;gap:0.5rem">
+            <a href="events.html" class="btn" style="flex:1;display:inline-flex;justify-content:center;">See All Topics</a>
+            <a href="topics.html" class="btn" style="background:#6b61ff;box-shadow:none">Branch Map</a>
+          </div>
         </section>
       </div>
 
-      <!-- Right column (sidebar) -->
-      <aside>
-        <section id="events-preview" class="card">
-          <h2>Upcoming</h2>
-          <p><strong>Next Meeting:</strong> Every Tuesday and Thursday afterschool</p>
-          <p><strong>Topic:</strong> "The beautiful geometry of trigonometry"</p>
-          <a href="events.html" class="btn" style="margin-top:0.5rem;display:inline-block">See All Topics</a>
-        </section>
-
-        <section id="fact-week" class="card" style="margin-top:1rem">
+      <div class="panel" style="margin-top:1rem">
+        <section id="fact-week">
           <h2>Math Fact</h2>
           <p id="fact" class="fact">Loading a cool fact...</p>
         </section>
+      </div>
 
-        <section id="welcome-quote" class="card" style="margin-top:1rem;text-align:center">
+      <div class="panel" style="margin-top:1rem;text-align:center">
+        <section id="welcome-quote">
           <h2>Welcome</h2>
-          <p style="margin:0.25rem 0 0 0;color:var(--muted)">
+          <p style="margin-top:0.35rem;color:var(--muted)">
             “Pure mathematics is, in its way, the poetry of logical ideas.” — Albert Einstein
           </p>
         </section>
-      </aside>
-    </div>
+      </div>
+    </aside>
   </main>
 
-  <footer>
-<p style="color: white;"> <span id="year"></span> LHS Math Club | Made with curiosity and logic ♾️</p>
-</footer>
-  
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <p><span id="year"></span> LHS Math Club | Made with curiosity and logic ♾️</p>
+  </footer>
+
+  <!-- SCRIPTS (kept and improved) -->
   <script>
-    // Highlight the active nav link based on current filename
+    // Highlight active nav link based on current filename or matching href
     (function highlightNav(){
       const path = window.location.pathname.split("/").pop() || "index.html";
-      const idMap = {
-        "index.html":"nav-home",
-        "events.html":"nav-events",
-        "members.html":"nav-members",
-        "topics.html":"nav-topics",
-        "sources.html":"nav-sources",
-        "https://docs.google.com/forms/d/e/1FAIpQLSccm9YueGPrGNLYNw8a2W_CUUANmKltz6ejm1NGX2DcSC3YNw/viewform?usp=dialog":"nav-apply"
-      };
-      const navId = idMap[path];
-      if(navId){
-        const el = document.getElementById(navId);
-        if(el) el.classList.add("active");
-      } else {
-        // default to home if unknown
+      const navLinks = document.querySelectorAll("nav.site-nav a");
+      navLinks.forEach(a=>{
+        try{
+          const href = a.getAttribute("href");
+          if(!href) return;
+          // normalize
+          const hrefName = href.split("/").pop();
+          if(hrefName === path || href === window.location.href || (href.includes(path) && path !== "")){
+            a.classList.add("active");
+          }
+        }catch(e){}
+      });
+      // ensure home is active if none matched
+      if(!document.querySelector("nav.site-nav a.active")){
         const home = document.getElementById("nav-home");
         if(home) home.classList.add("active");
       }
     })();
 
-    // Greeting based on time of day
+    // Greeting based on time of day (kept from original)
     (function greeting(){
       const hr = new Date().getHours();
       const g = document.getElementById("greeting");
+      if(!g) return;
       if(hr < 12) g.textContent = "Good morning — welcome to Math Club!";
       else if(hr < 18) g.textContent = "Good afternoon — welcome to Math Club!";
       else g.textContent = "Good evening — welcome to Math Club!";
     })();
 
-    // Math Fact of the Week (random)
+    // Math Fact (improved selection & punctuation)
     (function factOfWeek(){
       const facts = [
         "Zero is the only number that can't be represented in Roman numerals.",
         "The Fibonacci sequence appears in pinecones, sunflowers, and seashells.",
-        "A circle encloses the maximum area for a given perimeter — nature loves efficiency!",
+        "A circle encloses the maximum area for a given perimeter — nature loves efficiency.",
         "Imaginary numbers help engineers describe real phenomena like alternating current.",
-        "There are infinitely many prime numbers — Euclid proved it over 2000 years ago.",
-        "A Möbius strip has only one side and one edge — topology is wild!",
-        "The equal sign (=) was invented in 1557. It was created by Welsh mathematician Robert Recorde, who said “no two things can be more equal than parallel lines.", 
-        "Infinity comes in sizes. Some infinite sets (like the real numbers) are bigger than others (like the counting numbers). Yes — there are different infinities!",
-        "Every map can be colored with at most four colors. The Four Color Theorem was the first major theorem proven with computer assistance (in 1976).",
-        "A sphere can be cut apart and reassembled into two spheres the same size as the original. That’s the Banach–Tarski paradox — it only works in pure math (with infinite precision), but it’s a mind-bender!"
+        "There are infinitely many prime numbers — Euclid proved it around 300 BCE.",
+        "A Möbius strip has only one side and one edge — topology is wonderfully strange.",
+        "The equal sign (=) was invented in 1557 by Robert Recorde — he described it as two parallel lines.",
+        "Infinity comes in sizes: some infinite sets (like the real numbers) are larger than others (like counting numbers).",
+        "The Four Color Theorem (1976) was the first major theorem proven with heavy computer assistance.",
+        "The Banach–Tarski paradox shows surprising properties of infinite sets — it's a pure-math construction, not physical reality."
       ];
       const el = document.getElementById("fact");
-      el.textContent = facts[Math.floor(Math.random() * facts.length)];
+      if(el) el.textContent = facts[Math.floor(Math.random() * facts.length)];
     })();
 
     // Dynamic year
-    document.getElementById("year").textContent = new Date().getFullYear();
+    (function setYear(){
+      const y = document.getElementById("year");
+      if(y) y.textContent = new Date().getFullYear();
+    })();
   </script>
 </body>
 </html>
